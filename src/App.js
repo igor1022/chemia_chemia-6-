@@ -6,7 +6,6 @@ import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import ChatWidget from './components/ChatWidget';
-import ProductPage from './pages/ProductPage';
 
 // Импортируем prod.json вместо products.json
 import productsData from '../src/pages/prod.json';
@@ -68,7 +67,6 @@ function App() {
           <Route
             key={product.image_id}
             path={`/product/${product.image_id}`}
-            element={<ProductPage productId={product.image_id} addToCart={addToCart} />}
           />
         ))}
       </Routes>
