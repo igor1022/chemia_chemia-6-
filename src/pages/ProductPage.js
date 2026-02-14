@@ -1,6 +1,5 @@
 // src/pages/ProductPage.jsx
 import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 import productsData from './prod.json';
 
 const locales = [
