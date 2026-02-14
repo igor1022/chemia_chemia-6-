@@ -76,7 +76,14 @@ export default function ChatWidget() {
           {step === 3 && (
             <div className="chat-message manager">
               Дякуємо! Ми зв'яжемося з вами найближчим часом.  
-              Для зв'язку з менеджером: <a href="https://t.me/igorgagarin" target="_blank">@igorgagarin</a>
+              Для зв'язку з менеджером: 
+              <a 
+                href="https://t.me/igorgagarin" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                @igorgagarin
+              </a>
             </div>
           )}
         </div>
