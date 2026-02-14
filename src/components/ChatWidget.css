@@ -1,0 +1,194 @@
+.chat-widget-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Кнопка вызова виджета */
+.chat-side-button {
+  background: #0077ff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+.chat-side-button:hover {
+  background: #005fcc;
+}
+
+/* Сам виджет */
+.chat-popup {
+  position: fixed;
+  bottom: 70px;  /* по умолчанию снизу */
+  right: 20px;
+  width: 100%;
+  max-width: 360px;
+  max-height: 450px;
+  background: white;
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: slideUp 0.3s ease;
+}
+.chat-popup.open {
+  display: flex;
+}
+
+/* Анимация появления снизу */
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Заголовок */
+.chat-header {
+  background: #0077ff;
+  color: white;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.chat-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+.chat-widget-image {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Тело */
+.chat-body {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-message {
+  background: #f1f1f1;
+  padding: 10px 14px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+.chat-message.manager {
+  background: #e0f7ff;
+}
+.chat-message a {
+  color: #0077ff;
+  text-decoration: none;
+}
+.chat-message a:hover {
+  text-decoration: underline;
+}
+
+/* Форма */
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+.chat-form input:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+.chat-form button {
+  background: #0077ff;
+  color: white;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.chat-form button:hover {
+  background: #005fcc;
+}
+
+/* Футер */
+.chat-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+}
+.chat-footer button {
+  background: #0077ff;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.chat-footer button:hover {
+  background: #005fcc;
+}
+
+/* Адаптив: мобильные экраны */
+@media (max-width: 500px) {
+  .chat-popup {
+    top: 0;          /* выезжает сверху */
+    bottom: auto;    /* отменяем bottom */
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    flex-direction: column;
+    box-shadow: none;
+    animation: slideDown 0.3s ease;
+  }
+
+  .chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    gap: 12px;
+  }
+
+  .chat-footer {
+    padding: 12px 15px;
+  }
+
+  .chat-side-button {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Анимация появления сверху */
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
